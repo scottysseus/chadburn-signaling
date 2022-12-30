@@ -29,6 +29,7 @@
     "@types/express-serve-static-core": "4.17.28",
     "@types/node": "^14.14.37",
     "lib0": "^0.2.58",
+    "pino": "^8.8.0",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",

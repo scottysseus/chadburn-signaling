@@ -1,7 +1,13 @@
 import http from "http";
 import * as map from "lib0/map";
+import Pino, { stdTimeFunctions } from "pino";
 import internal from "stream";
 import ws from "ws";
+
+const logger = Pino({
+  timestamp: stdTimeFunctions.isoTime,
+  formatters: { level: (label, number) => ({ level: label }) },
+});
 
 interface YSubscriptionMessage {
   type: "subscribe" | "unsubscribe";
@@ -144,4 +150,4 @@ server.on(
 
 server.listen(port);
 
-console.log("Signaling server running on localhost:", port);
+logger.info({ port: port }, `server started on port ${port}`);
