@@ -6,7 +6,7 @@ import ws from "ws";
 
 const logger = Pino({
   timestamp: stdTimeFunctions.isoTime,
-  formatters: { level: (label, number) => ({ level: label }) },
+  formatters: { level: (label) => ({ level: label }) },
 });
 
 interface YSubscriptionMessage {

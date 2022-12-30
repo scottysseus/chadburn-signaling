@@ -8,7 +8,7 @@ COPY src/ ./src/
 COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm fetch --prod
-RUN pnpm install -r --offline --prod --ignore-scripts
+RUN pnpm install -r --prod --ignore-scripts
 
 EXPOSE 4444
 
