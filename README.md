@@ -15,6 +15,7 @@ pnpm install
 ```bash
 pnpm run start
 ```
+
 ## Development Setup
 
 1. Install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for Visual Studio Code.
@@ -25,4 +26,18 @@ pnpm run start
 
 ```bash
 pnpm run prepare
+```
+
+## Working with the Docker Image
+
+Build the image with the following command:
+
+```bash
+pnpm run docker:build
+```
+
+Run it with this command:
+
+```bash
+pnpm run docker:start
 ```

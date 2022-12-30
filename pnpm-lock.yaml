@@ -13,6 +13,7 @@ specifiers:
   husky-init: ^8.0.0
   lib0: ^0.2.58
   prettier: ^2.7.1
+  ts-node: ^10.9.1
   ts-node-dev: ^2.0.0
   typescript: ^4.9.3
   ws: ^8.11.0
@@ -23,6 +24,7 @@ dependencies:
   '@types/node': 14.18.33
   lib0: 0.2.58
   prettier: 2.7.1
+  ts-node: 10.9.1_kluoused5zacjtflizwvdqgpom
   ts-node-dev: 2.0.0_kluoused5zacjtflizwvdqgpom
   typescript: 4.9.3
   ws: 8.11.0

@@ -36,10 +36,6 @@ const server = http.createServer((request, response) => {
  */
 const topics = new Map<string, Set<ws.WebSocket>>();
 
-/**
- * @param socket
- * @param message
- */
 const send = (socket: ws.WebSocket, message: object) => {
   if (
     socket.readyState !== wsReadyStateConnecting &&
@@ -58,7 +54,7 @@ const send = (socket: ws.WebSocket, message: object) => {
  * Setup a new client
  * @param socket
  */
-const onconnection = (socket: ws.WebSocket) => {
+const onConnection = (socket: ws.WebSocket) => {
   const subscribedTopics = new Set<string>();
   let closed = false;
   // Check if connection is still alive
@@ -134,15 +130,11 @@ const onconnection = (socket: ws.WebSocket) => {
     }
   });
 };
-wss.on("connection", onconnection);
 
+wss.on("connection", onConnection);
 server.on(
   "upgrade",
   (request: http.IncomingMessage, socket: internal.Duplex, head: Buffer) => {
-    // You may check auth of request here..
-    /**
-     * @param socket
-     */
     const handleAuth = (authSocket: ws.WebSocket) => {
       wss.emit("connection", authSocket, request);
     };

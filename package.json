@@ -7,8 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "prettier --write . && tsc",
     "start": "ts-node-dev src/index.ts",
+    "start:prod": "ts-node --transpile-only ./src/index.ts",
     "lint": "eslint \"src/**/*.ts\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker:build": "docker image rm -f signaling; docker build -t signaling .",
+    "docker:start": "docker run -p 4444:4444 --name signaling signaling",
+    "docker:stop": "docker stop signaling"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "@types/node": "^14.14.37",
     "lib0": "^0.2.58",
     "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.3",
     "ws": "^8.11.0"
